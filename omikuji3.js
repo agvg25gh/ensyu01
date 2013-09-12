@@ -1,50 +1,14 @@
-
 //**********************************************************************
-//  getOmikuji() 
+//  getOmikujiA() 
 //	
 //	引数　なし
 //　　　　  
 //	戻値　なし
 //　　　　
 //**********************************************************************
-function getOmikuji() {
-    var omikuji = ["大吉", "中吉", "小吉", "凶", "大凶"];
-    // 0 - n
-    // Math.floor(Math.random() * (n + 1))
-    var result = Math.floor(Math.random() * omikuji.length);
-    // alert(omikuji[result]);
-    document.getElementById('result').innerHTML = omikuji[result];
+function getOmikujiA() {
+    var omikuji   = ["大吉", "吉", "末吉", "凶", "大凶"];
     
-}
-
-//**********************************************************************
-//  getOmikuji3() 
-//	
-//	引数　おみくじを表示するspan要素
-//　　　　  
-//	戻値　なし
-//　　　　
-//**********************************************************************
-function getOmikuji3(aEle) {
-    var omikuji = ["大吉", "中吉", "小吉", "凶", "大凶"];
-    // 0 - n
-    // Math.floor(Math.random() * (n + 1))
-    var result = Math.floor(Math.random() * omikuji.length);
-    // alert(omikuji[result]);
-    //document.getElementById('result').innerHTML = omikuji[result];
-    aEle.innerHTML = omikuji[result];
-}
-
-//**********************************************************************
-//  getOmikuji5() 
-//	
-//	引数　なし
-//　　　　  
-//	戻値　なし
-//　　　　
-//**********************************************************************
-function getOmikuji5() {
-	
     var negaigoto = ["思いどおりになります。",
 				     "首尾よくかないます。",
 				     "人の助けでかないます。", 		 
@@ -92,10 +56,59 @@ function getOmikuji5() {
                      "あまり利益は期待できません。",
                      "周囲の影響で安定しません。",
                      "急ぐと損をします。じっくりと考えましょう。"];
-                              
-    // 0 - n   // Math.floor(Math.random() * (n + 1))
-    var result = Math.floor(Math.random() * omikuji.length);
-    // alert(omikuji[result]);
-    //document.getElementById('result').innerHTML = omikuji[result];
-    aEle.innerHTML = omikuji[result];
+    
+    //願い事などの文言はおみくじ一つにつき３パターン                 
+    var PtSu = 3;
+                     
+    var OmikujiNo = Math.floor(Math.random() * 10);
+    
+    switch(OmikujiNo){
+    	case 0:
+			break;
+		case 1:
+		case 2:
+		case 3: 
+			OmikujiNo = 1;
+			break;
+		case 4:
+		case 5:
+		case 6: 
+			OmikujiNo = 2;
+			break;
+		case 7:
+		case 8: 
+			OmikujiNo = 3;
+			break; 
+		case 9:
+			OmikujiNo = 4;
+			break;
+		default: 
+			OmikujiNo = 4;
+			break;
+	}
+	
+	document.getElementById('omikujibun').innerHTML = omikuji[OmikujiNo];
+	document.getElementById('negaigotobun').innerHTML = negaigoto[getIndex(PtSu,OmikujiNo)];
+	document.getElementById('renaiunbun').innerHTML = renaiun[getIndex(PtSu,OmikujiNo)];
+	document.getElementById('kinunbun').innerHTML = kinun[getIndex(PtSu,OmikujiNo)];　		
+ 
+}
+
+//**********************************************************************
+//  getIndex(aPtSu,aOmikujiNo) 
+//	
+//	
+//	引数　パターン数
+//       おみくじＮｏ
+//　　　　  
+//	戻値　Index
+//　　　　
+//**********************************************************************
+function getIndex(aPtSu,aOmikujiNo) {
+    // 0 - n
+    // Math.floor(Math.random() * (n + 1))
+    var result = Math.floor(Math.random() * aPtSu) + aPtSu * aOmikujiNo;
+    // alert(result);
+    return result;
+    
 }

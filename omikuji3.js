@@ -1,3 +1,23 @@
+
+//**********************************************************************
+//  getIndex(aPtSu,aOmikujiNo) 
+//	
+//	
+//	引数　パターン数
+//       おみくじＮｏ
+//　　　　  
+//	戻値　Index
+//　　　　
+//**********************************************************************
+function getIndex(aPtSu,aOmikujiNo) {
+    // 0 - n
+    // Math.floor(Math.random() * (n + 1))
+    var result = Math.floor(Math.random() * aPtSu) + aPtSu * aOmikujiNo;
+    // alert(result);
+    return result;
+    
+}
+
 //**********************************************************************
 //  getOmikujiA() 
 //	
@@ -43,7 +63,7 @@ function getOmikujiA() {
                      
     var kinun     = ["とてもいいでしょう。",
                      "絶好調。",    
-                     "変化はありません。", 
+                     "ざっくざっく。", 
                      "利益充分なり。",
                      "いいでしょう。",
                      "ある。",
@@ -51,7 +71,7 @@ function getOmikujiA() {
                      "悪い状況は好転します。", 
                      "悪くはない。",
                      "あまり利益は期待できませんが、損はしません。",
-                     "大きな損はなし。",
+                     "損をするかも。",
                      "あまり好調ではありません。",
                      "あまり利益は期待できません。",
                      "周囲の影響で安定しません。",
@@ -92,23 +112,4 @@ function getOmikujiA() {
 	document.getElementById('renaiunbun').innerHTML = renaiun[getIndex(PtSu,OmikujiNo)];
 	document.getElementById('kinunbun').innerHTML = kinun[getIndex(PtSu,OmikujiNo)];　		
  
-}
-
-//**********************************************************************
-//  getIndex(aPtSu,aOmikujiNo) 
-//	
-//	
-//	引数　パターン数
-//       おみくじＮｏ
-//　　　　  
-//	戻値　Index
-//　　　　
-//**********************************************************************
-function getIndex(aPtSu,aOmikujiNo) {
-    // 0 - n
-    // Math.floor(Math.random() * (n + 1))
-    var result = Math.floor(Math.random() * aPtSu) + aPtSu * aOmikujiNo;
-    // alert(result);
-    return result;
-    
 }

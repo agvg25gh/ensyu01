@@ -107,9 +107,14 @@ function getOmikujiA() {
 			break;
 	}
 	
-	document.getElementById('omikujibun').innerHTML = omikuji[OmikujiNo];
-	document.getElementById('negaigotobun').innerHTML = negaigoto[getIndex(PtSu,OmikujiNo)];
-	document.getElementById('renaiunbun').innerHTML = renaiun[getIndex(PtSu,OmikujiNo)];
-	document.getElementById('kinunbun').innerHTML = kinun[getIndex(PtSu,OmikujiNo)];　		
+	//document.getElementById('omikujibun').innerHTML = omikuji[OmikujiNo];
+	//document.getElementById('negaigotobun').innerHTML = negaigoto[getIndex(PtSu,OmikujiNo)];
+	//document.getElementById('renaiunbun').innerHTML = renaiun[getIndex(PtSu,OmikujiNo)];
+	//document.getElementById('kinunbun').innerHTML = kinun[getIndex(PtSu,OmikujiNo)];　
+	
+	document.getElementById('kekka').innerHTML = omikuji[OmikujiNo] + '<br><br>'
+	                                           + '◇願い事　' + negaigoto[getIndex(PtSu,OmikujiNo)] + '<br><br>'
+	                                           + '◇恋愛運　' + renaiun[getIndex(PtSu,OmikujiNo)] + '<br><br>'
+	                                           + '◇金運　　' + kinun[getIndex(PtSu,OmikujiNo)];		
  
 }

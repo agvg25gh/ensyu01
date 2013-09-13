@@ -136,9 +136,9 @@ function getOmikujiA() {
 	                                 + '◇金運　　' + kinun[getIndex(PtSu,OmikujiNo)]; 
 	                                           
 	$('#otuge')
-	.css({
-		'top': '-100px'
-	})
+	//.css({
+	//	'top': '-100px'
+	//})
 	.html(result1)
 	.fadeIn('fast')
 	.animate({
@@ -147,7 +147,7 @@ function getOmikujiA() {
 	.animate({
 		'top': '30px'
 	}, 500)
-	.delay(3000)
+	.delay(4000)
 	.fadeOut('slow')
 	.bind('click', function() {
 		$(this).stop(true, false).fadeOut('slow');

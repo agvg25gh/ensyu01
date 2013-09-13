@@ -27,6 +27,13 @@ function getIndex(aPtSu,aOmikujiNo) {
 //　　　　
 //**********************************************************************
 function getOmikujiA() {
+	
+	$('#otuge')
+	.css({
+		'top': '-100px'
+	})
+	.html('');
+	
     var omikuji   = ["大吉", "吉", "末吉", "凶", "大凶"];
     
     var negaigoto = ["思いどおりになります。",
@@ -112,9 +119,63 @@ function getOmikujiA() {
 	//document.getElementById('renaiunbun').innerHTML = renaiun[getIndex(PtSu,OmikujiNo)];
 	//document.getElementById('kinunbun').innerHTML = kinun[getIndex(PtSu,OmikujiNo)];　
 	
-	document.getElementById('kekka').innerHTML = omikuji[OmikujiNo] + '<br><br>'
+	/*document.getElementById('kekka').innerHTML = omikuji[OmikujiNo] + '<br><br>'
 	                                           + '◇願い事　' + negaigoto[getIndex(PtSu,OmikujiNo)] + '<br><br>'
 	                                           + '◇恋愛運　' + renaiun[getIndex(PtSu,OmikujiNo)] + '<br><br>'
-	                                           + '◇金運　　' + kinun[getIndex(PtSu,OmikujiNo)];		
+	                                           + '◇金運　　' + kinun[getIndex(PtSu,OmikujiNo)]; */
+	                                          
+	/*document.getElementById('kekka').innerHTML = omikuji[OmikujiNo] + '<br><br>'
+	                                           + '◇願い事　' + negaigoto[getIndex(PtSu,OmikujiNo)] + '<br><br>'
+	                                           + '◇恋愛運　' + renaiun[getIndex(PtSu,OmikujiNo)] + '<br><br>'
+	                                           + '◇金運　　' + kinun[getIndex(PtSu,OmikujiNo)]; */
+	                                           
+	                                           
+	var result1 = omikuji[OmikujiNo] + '<br><br>'
+	                                 + '◇願い事　' + negaigoto[getIndex(PtSu,OmikujiNo)] + '<br><br>'
+	                                 + '◇恋愛運　' + renaiun[getIndex(PtSu,OmikujiNo)] + '<br><br>'
+	                                 + '◇金運　　' + kinun[getIndex(PtSu,OmikujiNo)]; 
+	                                           
+	$('#otuge')
+	.css({
+		'top': '-100px'
+	})
+	.html(result1)
+	.fadeIn('fast')
+	.animate({
+		'top': '40px'
+	}, 1000)
+	.animate({
+		'top': '30px'
+	}, 500)
+	.delay(3000)
+	.fadeOut('slow')
+	.bind('click', function() {
+		$(this).stop(true, false).fadeOut('slow');
+	}); 
+	
+	/*$('#news')
+	.fadeIn('slow')
+	.delay(3000)
+	.fadeOut('slow')
+	.bind('click', function() {
+		$(this).stop(true, false).fadeOut('slow');
+	});*/				
  
+}
+
+//**********************************************************************
+//  initOmikuji() 
+//	
+//	引数　なし
+//　　　　  
+//	戻値　なし
+//　　　　
+//**********************************************************************
+function initOmikuji() {
+    
+	$('#news')
+	.css({
+		'top': '-1000px'
+	});
+	 
 }

@@ -3,18 +3,27 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Omikuji3</title>
+        <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="omikuji3.js"></script>
+        <link href="omikuji3.css" rel="stylesheet" type="text/css" />
     </head>
-    <body>
+    <body onload="initOmikuji;">
         <h1>おみくじてすと</h1>
         
         <input type="button" value="あなたの運勢は？" onclick="getOmikujiA();">
+        
+        <!--
         <p>あなたの運勢は...<span id="omikujibun"></span></p>
         <p>願い事は...<span id="negaigotobun"></span></p>
         <p>恋愛運は...<span id="renaiunbun"></span></p>
         <p>金運は...<span id="kinunbun"></span></p>
         
         <p id="kekka"></p>
+        -->
+        
+        <div id="otuge">
+			<p></p>
+		</div>
         
         
     </body>
